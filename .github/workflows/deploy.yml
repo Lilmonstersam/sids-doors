@@ -1,0 +1,66 @@
+name: Deploy mockup to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Permissions GITHUB_TOKEN needs to publish a Pages deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deployment finish; queue at most one more.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Stage the site
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp .nojekyll _site/
+          cp -R images _site/images
+          # docs/ holds the reviewer notes .docx and is deliberately not published
+
+      - name: Sanity check the staged site
+        run: |
+          set -e
+          test -f _site/index.html
+          test -d _site/images
+          if grep -q '\.\./images/' _site/index.html; then
+            echo "::error::index.html still uses ../images/ paths"; exit 1
+          fi
+          missing=0
+          for p in $(grep -o "images/[A-Za-z0-9._/()+-]*\.\(png\|jpg\|jpeg\|svg\|webp\)" _site/index.html | sort -u); do
+            if [ ! -f "_site/$p" ]; then echo "::error::missing asset $p"; missing=1; fi
+          done
+          [ "$missing" -eq 0 ] || exit 1
+          echo "Staged $(find _site -type f | wc -l) files"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
