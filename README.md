@@ -17,7 +17,7 @@ production build: no back end, no forms that submit, no CMS.
 
 ## Scope
 
-36 routes and 51 product pages, covering the five approved navigation families plus
+38 routes and 51 product pages, covering the five approved navigation families plus
 brand, industry and service-area pages. All 50 indexable `/product/` URLs on the current
 live site are represented.
 
