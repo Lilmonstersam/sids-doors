@@ -17,9 +17,16 @@ production build: no back end, no forms that submit, no CMS.
 
 ## Scope
 
-38 routes and 51 product pages, covering the five approved navigation families plus
-brand, industry and service-area pages. All 50 indexable `/product/` URLs on the current
-live site are represented.
+33 routes and 53 product pages, covering the five approved navigation families plus
+brand, industry and service-area pages.
+
+The November 2026 update applies the client's change list
+(`docs/Sids Doors - New site changes (Nov 2026).docx`): new home page copy and enquiry
+form, 4-step process, full service-area list, Sectional door openers renamed to Overhead
+door openers, discontinued Merlin, Centsys, Centurion, Rotech and Gate Drive Systems
+products removed, the new Merlin and Grifco opener, gate and accessory ranges added,
+B&D / Steel-Line / Gliderol brochure slots on the door pages, tilt doors on application
+only, and new Servicing and repairs copy with a booking form.
 
 Navigation is hash-based (`#/garage-door-openers/roller-door-openers/`), so the whole
 prototype is one HTML file and any URL can be shared or bookmarked. Nothing needs a
@@ -73,10 +80,19 @@ Brochure links point at PDFs on `sidsdoors.com.au`; they are not mirrored here.
 
 ## Known gaps
 
-See `docs/Sids Doors Mockup - Reviewer Notes.docx`. The short version: the four smart
-connectivity kit subcategories have no products yet, nine products have no image, and
-two of the three homepage testimonials are invented placeholder copy that must not be
-published.
+Anything still waiting on Sid's Doors is flagged in the mockup itself: a dashed yellow
+"TBC" / "To be supplied" marker, a grey "Product image pending" placeholder, or a
+"Details TBA" tag on product cards. Outstanding as of November 2026:
+
+- QBCC licence number
+- New home page photos, and a new photo for the myQ Gateway Bundle M828AU774
+- Photos, descriptions and specs for every new product
+- B&D, Steel-Line and Gliderol brochure PDFs, plus framing documents
+- Confirmation on whether Merlin Silent Drive Pro MR855EVO and Quiet Drive Pro MR655EVO
+  stay (not mentioned in the change list, so still shown)
+
+Two of the three homepage testimonials are still invented placeholder copy that must not
+be published. See also `docs/Sids Doors Mockup - Reviewer Notes.docx` (September review).
 
 ---
 
