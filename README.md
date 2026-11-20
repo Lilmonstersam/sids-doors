@@ -17,7 +17,7 @@ production build: no back end, no forms that submit, no CMS.
 
 ## Scope
 
-33 routes and 53 product pages, covering the five approved navigation families plus
+33 routes and 51 product pages, covering the five approved navigation families plus
 brand, industry and service-area pages.
 
 The November 2026 update applies the client's change list
@@ -88,8 +88,8 @@ Anything still waiting on Sid's Doors is flagged in the mockup itself: a dashed 
 - New home page photos, and a new photo for the myQ Gateway Bundle M828AU774
 - Photos, descriptions and specs for every new product
 - B&D, Steel-Line and Gliderol brochure PDFs, plus framing documents
-- Confirmation on whether Merlin Silent Drive Pro MR855EVO and Quiet Drive Pro MR655EVO
-  stay (not mentioned in the change list, so still shown)
+- Confirmation on whether the Merlin Silent Drive Essentials MR655MYQ stays (the client
+  has said they don't stock or sell it)
 
 Two of the three homepage testimonials are still invented placeholder copy that must not
 be published. See also `docs/Sids Doors Mockup - Reviewer Notes.docx` (September review).
